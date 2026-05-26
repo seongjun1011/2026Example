@@ -10,7 +10,7 @@ import org.springframework.validation.Validator;
 public class Personvalidator implements Validator {
     @Override
     public boolean supports(Class<?> clazz) {
-        return false;
+        return Person.class.isAssignableFrom(clazz);
     }
 
     @Override
