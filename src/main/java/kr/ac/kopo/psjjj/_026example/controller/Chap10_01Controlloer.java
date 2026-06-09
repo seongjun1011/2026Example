@@ -1,9 +1,14 @@
 package kr.ac.kopo.psjjj._026example.controller;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Collection;
 
 @Controller
 @RequestMapping("/exam10_01")
@@ -35,6 +40,27 @@ public class Chap10_01Controlloer {
     @GetMapping("/home/main")
     public String requestMethod5(Model model){
         return "homePage";
+    }
+
+    @GetMapping("/exam02")
+    public String requestMethod6(Model model){
+        return "redirect:/member/user";
+    }
+
+    @GetMapping("/member/user")
+    public String requestMethod7(Authentication authentication, Model model){
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        String userName = userDetails.getUsername();
+        String password = userDetails.getPassword();
+        model.addAttribute("userName", userName);
+        model.addAttribute("password", password);
+        model.addAttribute("uri", "/member/user");
+        Collection<? extends GrantedAuthority> authorities = userDetails.getAuthorities();
+        for(GrantedAuthority item : authorities){
+            model.addAttribute("role", item + " ");
+        }
+
+        return "viewPage10_02";
     }
 
 
