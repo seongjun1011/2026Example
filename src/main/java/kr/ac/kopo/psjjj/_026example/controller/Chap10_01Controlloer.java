@@ -70,9 +70,19 @@ public class Chap10_01Controlloer { // 💡 클래스명 오타 수정 (Controll
         return "viewPage10_03";
     }
 
-    @GetMapping("/manager_tag")
+    @GetMapping("/manager/tag")
     public String requestmethod9(Model model){
         return "viewPage10_03";
+    }
+
+    @GetMapping("/exam04")
+    public String requestmethod10(Model model){
+        return "viewPage10_04";
+    }
+
+    @GetMapping("/admin/tag")
+    public String requestmethod11(Model model){
+        return "viewPage10_04";
     }
 
 }
