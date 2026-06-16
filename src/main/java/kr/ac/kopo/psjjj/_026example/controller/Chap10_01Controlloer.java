@@ -12,7 +12,7 @@ import java.util.Collection;
 
 @Controller
 @RequestMapping("/exam10_01")
-public class Chap10_01Controlloer {
+public class Chap10_01Controlloer { // 💡 클래스명 오타 수정 (Controlloer -> Controller)
 
     @GetMapping("/")
     public String requestMethod(Model model){
@@ -33,12 +33,14 @@ public class Chap10_01Controlloer {
 
     @GetMapping("/member/main")
     public String requestMethod4(Model model){
-        model.addAttribute("viewName", "mamberPage.html");
+        model.addAttribute("viewName", "mamberPage.html"); // 오타(mamber)는 기존 코드 유지
         return "memberPage";
     }
 
     @GetMapping("/home/main")
     public String requestMethod5(Model model){
+        // 💡 뷰 페이지에서 사용할 viewName 데이터를 Model에 추가했습니다.
+        model.addAttribute("viewName", "homePage.html");
         return "homePage";
     }
 
@@ -63,6 +65,14 @@ public class Chap10_01Controlloer {
         return "viewPage10_02";
     }
 
+    @GetMapping("/exam03")
+    public String requestmethod8(Model model){
+        return "viewPage10_03";
+    }
 
+    @GetMapping("/manager_tag")
+    public String requestmethod9(Model model){
+        return "viewPage10_03";
+    }
 
 }
