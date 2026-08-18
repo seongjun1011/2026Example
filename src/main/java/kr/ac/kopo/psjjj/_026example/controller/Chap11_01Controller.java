@@ -1,6 +1,7 @@
 package kr.ac.kopo.psjjj._026example.controller;
 
 
+import kr.ac.kopo.psjjj._026example.exception.UserException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,12 +29,16 @@ public class Chap11_01Controller {
         throw new UserException("UserException @ExceptionHandler 예제 메시지입니다.");
     }
 
-    @ExceptionHandler
-    public String handlerException(UserException ex, Model model){
-        model.addAttribute("data1", ex.getMessage());
-        model.addAttribute("data2", ex.toString());
-        return "viewPage11_01";
-    }
+//    @ExceptionHandler
+//    public String handlerException(UserException ex, Model model){
+//        model.addAttribute("data1", ex.getMessage());
+//        model.addAttribute("data2", ex.toString());
+//        return "viewPage11_01";
+//    }
 
+    @GetMapping("/exam04")
+    public void requestMethod04(){
+        throw new UserException("UserException @ExceptionHandler 예제 메시지입니다.");
+    }
 }
 

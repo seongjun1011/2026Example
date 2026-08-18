@@ -1,4 +1,4 @@
-package kr.ac.kopo.psjjj._026example.controller;
+package kr.ac.kopo.psjjj._026example.exception;
 
 public class UserException extends RuntimeException {
     public UserException(String message) {
