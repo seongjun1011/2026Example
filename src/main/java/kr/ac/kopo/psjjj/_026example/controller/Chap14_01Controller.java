@@ -2,7 +2,7 @@ package kr.ac.kopo.psjjj._026example.controller;
 
 
 import kr.ac.kopo.psjjj._026example.domain.Member3;
-import kr.ac.kopo.psjjj._026example.repository.MemberRepository;
+import kr.ac.kopo.psjjj._026example.repository.Member3Repository2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +14,7 @@ import java.util.Optional;
 @RequestMapping("/exam14_01")
 public class Chap14_01Controller {
     @Autowired
-    MemberRepository repository;
+    Member3Repository2 repository;
 
     @GetMapping
     public String viewHomePage(Model model) {
